@@ -1,0 +1,16 @@
+<h1> Welcome Home <%=@user.name%>!</h1>
+</br>
+<h1> Your Luckyvideos</h1>
+  <% @luckyvideos.each do |luckyvideo| %>
+    <ul>
+	    <li class "display-4"><a href="<%= luckyvideo.url %>" target="_blank"><p class="h4"><%= luckyvideo.title %></p></a></li>
+	 </ul>
+  <% end %>
+<h3><em><%= @empty if @empty %></em></h3><br/>
+</br>
+<h1> Add New Luckyvideo</h1>
+    <form method="POST" action="/luckyvideo/<%=@user.id%>">
+      <p>Title <input type="text" name="title" required></p>
+      <p>URL <input type="text" name="url" required></p>
+      <input type="submit" value="Add LuckyVideo!">
+    </form>

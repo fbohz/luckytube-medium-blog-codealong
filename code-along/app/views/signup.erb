@@ -1,0 +1,7 @@
+<h1> Sign Up</h1>
+<h5><%= @error if @error %></h5><br/>
+    <form method="POST" action="/signup">
+      <p>Your Name: <input type="text" name="name" required></p>
+      <p>Email <input type="email" name="email" required></p>
+      <input type="submit" value="Sign Up">
+    </form>
